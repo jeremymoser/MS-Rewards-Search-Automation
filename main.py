@@ -1,6 +1,6 @@
 # Developer: Jeremy Moser
 # Created Date: Sunday, November 12th, 2023
-# Last Modified Date: Monday, January 1st, 2024
+# Last Modified Date: Sunday, January 14th, 2024
 
 from selenium import webdriver
 from selenium.webdriver import Edge
@@ -12,7 +12,6 @@ from datetime import datetime
 import time
 
 edge_options = Options()
-# edge_options.add_experimental_option("detach", True)
 edge_options.add_argument("user-data-dir=/Users/jeremymoser/Library/Application Support/Microsoft Edge")
 edge_options.add_argument("profile-directory=Default")
 
@@ -25,10 +24,10 @@ def perform_searches():
     searches = 5
 
     now = datetime.now()
-    dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
+    dt_string = now.strftime("%A, %B %d, %Y %H:%M %p")
 
     print("")
-    print("Current Date/Time: ", dt_string)
+    print("Current date & time: ", dt_string)
     print("Searches include:")
     print("=========================")
 
