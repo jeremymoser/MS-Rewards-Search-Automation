@@ -24,7 +24,7 @@ def perform_searches():
     searches = 5
 
     now = datetime.now()
-    dt_string = now.strftime("%A, %B %d, %Y %H:%M %p")
+    dt_string = now.strftime("%A, %B %d, %Y %-I:%M %p")
 
     print("")
     print("Current date & time: ", dt_string)
