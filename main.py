@@ -27,6 +27,7 @@ def perform_searches():
     now = datetime.now()
     dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
 
+    print("")
     print("Current Date/Time: ", dt_string)
     print("Searches include:")
     print("=========================")
@@ -54,5 +55,6 @@ def perform_searches():
         # Wait 3 seconds before continuing
         time.sleep(5)
     print("=========================")
+    print("")
 
 perform_searches()
