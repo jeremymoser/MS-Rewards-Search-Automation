@@ -1,6 +1,6 @@
 # Developer: Jeremy Moser
 # Created Date: Sunday, November 12th, 2023
-# Last Modified Date: Monday, November 13th, 2023
+# Last Modified Date: Monday, January 1st, 2024
 
 from selenium import webdriver
 from selenium.webdriver import Edge
@@ -8,6 +8,7 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from wonderwords import RandomWord
+from datetime import datetime
 import time
 
 edge_options = Options()
@@ -21,9 +22,13 @@ def perform_searches():
 
     # Initiate variables
     counter = 1
-    searches = 34
+    searches = 5
 
-    print("Today's searches include:")
+    now = datetime.now()
+    dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
+
+    print("Current Date/Time: ", dt_string)
+    print("Searches include:")
     print("=========================")
 
     # While loop to interate from counter to searches value
@@ -33,7 +38,7 @@ def perform_searches():
         unique_word = rw.word()
         # Set URL to bing.com, set search, and press Return
         edgeBrowser.get("https://www.bing.com")
-        time.sleep(1)
+        time.sleep(5)
         search_box = edgeBrowser.find_element(By.ID, "sb_form_q")
         search_box.clear()
         search_box.send_keys(unique_word)
@@ -47,7 +52,7 @@ def perform_searches():
         # Increment counter
         counter += 1
         # Wait 3 seconds before continuing
-        time.sleep(3)
+        time.sleep(5)
     print("=========================")
 
 perform_searches()
