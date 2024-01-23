@@ -21,7 +21,7 @@ def perform_searches():
 
     # Initiate variables
     counter = 1
-    searches = 5
+    searches = 4
 
     now = datetime.now()
     dt_string = now.strftime("%A, %B %d, %Y %-I:%M %p")
@@ -54,6 +54,11 @@ def perform_searches():
         # Wait 3 seconds before continuing
         time.sleep(5)
     print("=========================")
+    print("")
+
+    with open("log.txt", "a") as file:
+        file.write(dt_string + "\n")
+    print("Log file updated.")
     print("")
 
 perform_searches()
